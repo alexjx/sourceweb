@@ -94,7 +94,6 @@ private:
     IndexerContext *m_context;
 };
 
-
 ///////////////////////////////////////////////////////////////////////////////
 // indexTranslationUnit
 
@@ -105,7 +104,8 @@ void indexTranslationUnit(
     llvm::IntrusiveRefCntPtr<clang::FileManager> fm(
         new clang::FileManager(clang::FileSystemOptions()));
     std::unique_ptr<IndexerAction> action(new IndexerAction(archive));
-    clang::tooling::ToolInvocation ti(argv, action.release(), fm.get());
+
+    clang::tooling::ToolInvocation ti(argv, std::unique_ptr<clang::FrontendAction>(action.release()), fm.get());
     ti.run();
 }
 

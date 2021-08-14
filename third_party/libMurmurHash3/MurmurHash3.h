@@ -10,10 +10,10 @@
 
 // Microsoft Visual Studio
 
-#if defined(_MSC_VER)
+#if defined(_MSC_VER) && (_MSC_VER < 1600)
 
 typedef unsigned char uint8_t;
-typedef unsigned long uint32_t;
+typedef unsigned int     uint32_t;
 typedef unsigned __int64 uint64_t;
 
 // Other compilers
@@ -34,4 +34,4 @@ void MurmurHash3_x64_128 ( const void * key, int len, uint32_t seed, void * out 
 
 //-----------------------------------------------------------------------------
 
-#endif // _MURMURHASH3_H_
+#endif  // _MURMURHASH3_H_
