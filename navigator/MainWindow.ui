@@ -30,6 +30,7 @@
     <addaction name="actionBrowseFiles"/>
     <addaction name="actionBrowseGlobalDefinitions"/>
     <addaction name="actionBrowseSymbols"/>
+    <addaction name="actionCrossReference"/>
    </widget>
    <widget class="QMenu" name="menuFile">
     <property name="title">
@@ -120,6 +121,17 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+S</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
+  </action>
+  <action name="actionCrossReference">
+   <property name="text">
+    <string>&amp;Cross-reference...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
    </property>
    <property name="shortcutContext">
     <enum>Qt::ApplicationShortcut</enum>

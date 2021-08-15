@@ -244,6 +244,7 @@ public:
     void setSelectedMatchIndex(int index);
     int tabStopSize();
     void setTabStopSize(int size);
+    std::set<std::string> findSymbolsAtSelected();
 
 public slots:
     void copy();
@@ -382,7 +383,7 @@ private:
     void ensureVisible(QPoint pt, int xMargin = 50, int yMargin = 50);
     void ensureSelectedMatchVisible();
 
-private:
+public:
     SourceWidgetLineArea *m_lineArea;
     SourceWidgetView *m_view;
     Project &m_project;

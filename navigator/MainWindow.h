@@ -46,6 +46,7 @@ private slots:
     void on_actionBrowseFiles_triggered();
     void on_actionBrowseGlobalDefinitions_triggered();
     void on_actionBrowseSymbols_triggered();
+    void on_actionCrossReference_triggered();
     void actionBack();
     void actionForward();
     void sourceWidgetFileChanged(File *file);

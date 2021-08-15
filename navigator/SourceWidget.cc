@@ -812,6 +812,11 @@ std::set<std::string> SourceWidgetView::findSymbolsAtRange(const FileRange &rang
     return result;
 }
 
+std::set<std::string> SourceWidgetView::findSymbolsAtSelected()
+{
+    return findSymbolsAtRange(m_selectedRange);
+}
+
 FileRange SourceWidgetView::findWordAtLocation(FileLocation loc)
 {
     assert(m_file != NULL);

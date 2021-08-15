@@ -252,6 +252,20 @@ void MainWindow::on_actionBrowseSymbols_triggered()
     tw->show();
 }
 
+void MainWindow::on_actionCrossReference_triggered()
+{
+    auto symbols = m_sourceWidget->m_view->findSymbolsAtSelected();
+    if (!symbols.empty()) {
+        for (const auto &symbol : symbols) {
+            TableReportWindow *tw = new TableReportWindow;
+            ReportRefList *    r  = new ReportRefList(*theProject, QString::fromStdString(symbol), tw);
+            tw->setTableReport(r);
+            tw->show();
+            break;
+        }
+    }
+}
+
 void MainWindow::actionBack()
 {
     if (m_history.canGoBack()) {
